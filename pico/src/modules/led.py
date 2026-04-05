@@ -7,9 +7,6 @@ class Led:
         
         print("Setup LED complete")
 
-    def loop(self):
-        pass
-
     def on(self):
         self._led.on()
 

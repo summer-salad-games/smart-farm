@@ -6,15 +6,12 @@ class SensorType:
     DHT22 = 2
 
 class DHT:
-    def __init__(self, pin=22, update_interval=1000, type=SensorType.DHT22):
+    def __init__(self, pin=22, update_interval=2500, type=SensorType.DHT22):
         self._sensor = dht.DHT11(pin) if type == SensorType.DHT11 else dht.DHT22(pin)
         self._update_interval = update_interval
-        self._last_time_measure = -1
+        self._last_time_measure = time.ticks_ms()
 
         print("Setup DHT complete")
-
-    def loop(self):
-        pass
 
     @property
     def temperature(self):

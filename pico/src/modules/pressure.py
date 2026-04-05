@@ -6,12 +6,9 @@ class Pressure:
         self._sensor = BMP180Sensor(i2c) # Address 119
         self._sensor.sealevel = sea_level
         self._update_interval = update_interval
-        self._last_time_measure = -1
+        self._last_time_measure = time.ticks_ms()
 
         print("Setup BMP180 complete")
-
-    def loop(self):
-        pass
 
     @property
     def temperature(self):

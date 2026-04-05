@@ -9,9 +9,6 @@ class LDR:
         self._adc = machine.ADC(self._pin)
         print("Setup LDR complete")
 
-    def loop(self):
-        pass
-
     @property
     def brightness(self):
         raw = self._adc.read_u16()
