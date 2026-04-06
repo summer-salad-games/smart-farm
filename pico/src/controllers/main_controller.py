@@ -16,7 +16,7 @@ class MainController:
         self._button = Button()
         self._wifi = Wifi(WIFI_CONFIG["ssid"], WIFI_CONFIG["password"])
         # self._led = Led()
-        # self._dht = DHT()
+        self._dht = DHT()
         # self._pressure = Pressure(self._i2c, sea_level=1016.5)
         # self._ldr = LDR()
 
@@ -25,7 +25,7 @@ class MainController:
     def loop(self):
         pass
         # print("--------------------------------- RAW DATA ---------------------------------")
-        # print(f"DHT22 (Temperature {self._dht.temperature}, Humidity: {self._dht.humidity})")
+        print(f"DHT22 (Temperature {self._dht.temperature}, Humidity: {self._dht.humidity})")
         # print(f"BMP180 (Pressure {self._pressure.pressure}, Temperature: {self._pressure.temperature}, Altitude: {self._pressure.altitude})")
         # print(f"LDR (Light {self._ldr.brightness})")
         # print(f"Wifi (Connected: {self._wifi.is_connected}, IP: {self._wifi.ip_address})")
